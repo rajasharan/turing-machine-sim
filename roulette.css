@@ -85,6 +85,8 @@
   }
 }
 
-html {
-  background: beige;
+@media (prefers-color-scheme: light) {
+  html {
+    background: beige;
+  }
 }

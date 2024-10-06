@@ -8,6 +8,8 @@ https://rajasharan.github.io/turing-machine-sim/
 ### Run locally
 ```sh
 $ python3 -m http.server 8080
+Serving HTTP on :: port 8080 (http://[::]:8080/) ...
+
 ```
 
 ### Credits
