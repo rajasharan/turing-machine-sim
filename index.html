@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
+    <title>Turing Machine Sim</title>
+    <link rel="stylesheet" type="text/css" href="./vendor/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./roulette.css">
+    <script src="./vendor/vue.global.prod.js"></script>
+  </head>
+  <body id="app">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Turing Machine Simulator
+      </h1>
+      <p class="subtitle">
+        (work in progress!)
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <span class="tag is-primary">Program</span>
+    <textarea
+      class="textarea"
+      placeholder="10 lines of textarea"
+      rows="10"
+      v-model="program_string"
+      disabled
+    ></textarea>
+  </section>
+
+  <section>
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">state</p>
+          <p class="title">{{current_state}}</p>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <section>
+    <div class='roulette-wrapper'>
+      <div class='selector'></div>
+      <div class='wheel'>
+        <div class='row'>
+          <div class='crd red' :class="{ 'anim-right': left, 'anim-left': right }" v-for="item in items">{{ item }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p v-if="step_count === 0 || reset_pressed" class="title button is-info" v-on:click="run()">start</p>
+          <p v-else class="title button" :class="{'is-warning': running, 'is-primary': !running}" v-on:click="pause()">
+            Steps = {{step_count}}
+          </p>
+        </div>
+      </div>
+    </nav>
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="title button is-danger" v-on:click="reset()">reset</p>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <script src="./simulation.js"></script>
+  <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+/* Horizontal Roulette Spinner: https://codepen.io/hugoptz_/pen/qBEpOve */
+
+.roulette-wrapper {
+  position:relative;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.roulette-wrapper .selector {
+  width:85px;
+  background:green;
+  left:50%;
+  height:100%;
+  transform:translate(-50%,0%);
+  position:absolute;
+  z-index:2;
+  opacity: 0.4;
+}
+
+.roulette-wrapper .wheel {
+  display:flex;
+}
+
+.roulette-wrapper .wheel .row {
+  display:flex;
+}
+
+.roulette-wrapper .wheel .row .crd {
+  height:75px;
+  width:75px;
+  margin:3px;
+  border-radius:8px;
+  border-bottom:3px solid rgba(0,0,0,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:2.5em;
+}
+
+.crd.red{
+/*  background:#F95146;*/
+/*  background: #232724;*/
+  background: #4c4f4cbf;
+  user-select: none;
+}
+
+.crd.black{
+/*  background:#2D3035;*/
+/*  background: #232724;*/
+}
+
+.crd.green{
+/*  background:#00C74D;*/
+/*  background: #232724;*/
+}
+
+.crd.red.anim-right {
+  transform: translate(82px, 0px);
+  transition-duration: 1s;
+}
+
+.crd.red.anim-left {
+  transform: translate(-82px, 0px);
+  transition-duration: 1s;
+}
+
+.textarea {
+  resize: none;
+  border: 1rem solid grey !important;
+  background: lightsteelblue !important;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+@media screen and (min-width: 600px) {
+  #app {
+    width: 600px;
+    margin: auto;
+  }
+}
+
+html {
+  background: beige;
+}
